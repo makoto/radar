@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <title></title>
+     <script src="/bower_components/d3/d3.min.js"></script>
+     <script src="/bower_components/radar-chart-d3/src/radar-chart.js"></script>
+     <link rel="stylesheet" href="/bower_components/radar-chart-d3/src/radar-chart.min.css" media="screen" title="no title" charset="utf-8">
+     <link rel="stylesheet" href="/css/main.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div class="chart-container"></div>
+    <script>
+    // d3.csv("data/CategoryLocationVenues CL simplified Norm radar plot v2.csv", function(data) {
+      var data1 = {
+              className:'one',
+              axes: [
+                {axis:"Email",value:0.59},
+                {axis:"Social Networks",value:0.56},
+                {axis:"Internet Banking",value:0.42},
+                {axis:"News Sportsites",value:0.34},
+                {axis:"Search Engine",value:0.48},
+                {axis:"View Shopping sites",value:0.14},
+                {axis:"Paying Online",value:0.11},
+                {axis:"Buy Online",value:0.05},
+                {axis:"Stream Music",value:0.07},
+                {axis:"Online Gaming",value:0.12}
+              ]
+        }
+
+      var data2 =  {
+          className:'two',
+          axes: [
+          {axis:"Email",value:0.48},
+          {axis:"Social Networks",value:0.41},
+          {axis:"Internet Banking",value:0.27},
+          {axis:"News Sportsites",value:0.28},
+          {axis:"Search Engine",value:0.46},
+          {axis:"View Shopping sites",value:0.29},
+          {axis:"Paying Online",value:0.11},
+          {axis:"Buy Online",value:0.14},
+          {axis:"Stream Music",value:0.05},
+          {axis:"Online Gaming",value:0.19}
+          ]
+        }
+
+      var data = [data1,data2]
+      var chart = RadarChart.chart().config({
+        w: 400,
+        h: 400,
+        color: function() {},
+        circles: false
+      });
+      var cfg = chart.config();
+      var id  = '.chart-container';
+      // d3.select(id).select('svg').remove();
+      d3.select(id)
+        .append("svg")
+        .attr("width", cfg.w)
+        .attr("height", cfg.h)
+        .datum(data)
+        .call(chart);
+
+      function update(id, cfg, data, cart){
+        d3.select('svg')
+          .attr("width", cfg.w)
+          .attr("height", cfg.h)
+          .datum(data)
+          .call(chart);
+      }
+
+      // update(id,cfg,[data1],chart)
+      // update(id,cfg,[data2],chart)
+
+    </script>
+  </body>
+</html>
