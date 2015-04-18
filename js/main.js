@@ -23,7 +23,8 @@ App.init = function(csv){
     w: 400,
     h: 400,
     color: color,
-    circles: false
+    radius: 1
+    // circles: false
   });
   var cfg = chart.config();
   var id  = '.chart-container';
