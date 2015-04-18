@@ -1,0 +1,16 @@
+.radar-chart .area {
+  fill-opacity: 0.7;
+}
+.radar-chart.focus .area {
+  fill-opacity: 0.3;
+}
+.radar-chart.focus .area.focused {
+  fill-opacity: 0.9;
+}
+.chart-container{
+  float:left;
+}
+.chart-legend{
+  float:left;
+  margin-left:2em;
+}
