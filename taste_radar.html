@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title></title>
+     <script src="/bower_components/d3/d3.min.js"></script>
+     <script src="/bower_components/radar-chart-d3/src/radar-chart.js"></script>
+     <script src="/bower_components/jQuery/dist/jquery.min.js"></script>
+     <script src="/js/main.js"></script>
+     <link rel="stylesheet" href="/bower_components/radar-chart-d3/src/radar-chart.min.css" media="screen" title="no title" charset="utf-8">
+     <link rel="stylesheet" href="/css/main.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div class="chart-container"></div>
+    <form class="chart-legend">
+    </form>
+    <script>
+    d3.csv("data/CategoryLocationVenues CL simplified Norm radar plot v2.csv", function(csv) {
+      App.init(csv)
+    })
+    </script>
+  </body>
+</html>
