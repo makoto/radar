@@ -91,7 +91,7 @@
       }
       data.forEach(function(d){
         var text = '<input type="checkbox" checked value="' + d.className + '"/>'
-        text+='<span style="background-color:' + color(d.className) + '">' + d.className + '</span><br>'
+        text+='<span style="padding-left:1em;padding-right:1em;background-color:' + color(d.className) + '">' + d.className + '</span><br>'
         $('.chart-legend').append(text)
       })
 
