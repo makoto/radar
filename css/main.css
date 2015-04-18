@@ -7,11 +7,10 @@
 .radar-chart.focus .area.focused {
   fill-opacity: 0.9;
 }
-.area.one, .one .circle {
-  fill: #FFD700;
-  stroke: none;
+.chart-container{
+  float:left;
 }
-.area.two, .two .circle {
-  fill: #ADD8E6;
-  stroke: none;
+.chart-legend{
+  float:left;
+  margin-left:2em;
 }
