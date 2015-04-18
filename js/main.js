@@ -28,43 +28,12 @@ App.init = function(csv){
   });
   var cfg = chart.config();
   var id  = '.chart-container';
-  // d3.select(id).select('svg').remove();
   var svg = d3.select(id)
     .append("svg")
     .attr("width", cfg.w)
     .attr("height", cfg.h)
     .datum(data)
     .call(chart);
-
-  // var legend = svg.append("g")
-  // 	.attr("class", "legend")
-  // 	.attr("height", 100)
-  // 	.attr("width", 200)
-  // 	.attr('transform', 'translate(90,20)')
-  // 	;
-  // 	//Create colour squares
-  // 	legend.selectAll('rect')
-  // 	  .data(header)
-  // 	  .enter()
-  // 	  .append("rect")
-  // 	  .attr("x", cfg.w - 65)
-  // 	  .attr("y", function(d, i){ return i * 20;})
-  // 	  .attr("width", 10)
-  // 	  .attr("height", 10)
-  // 	  .style("fill", function(d, i){ return color(d);})
-  // 	  ;
-  // 	//Create text next to squares
-  // 	legend.selectAll('text')
-  // 	  .data(header)
-  // 	  .enter()
-  // 	  .append("text")
-  // 	  .attr("x", cfg.w - 52)
-  // 	  .attr("y", function(d, i){ return i * 20 + 9;})
-  // 	  .attr("font-size", "11px")
-  // 	  .attr("fill", "#737373")
-  // 	  .text(function(d) { return d; })
-  // 	  ;
-
 
   function update(id, cfg, data, cart){
     d3.select('svg')
