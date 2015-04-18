@@ -33,7 +33,7 @@ var RadarChart = {
         tooltip.select("rect").classed("visible", 0);
       }else{
         tooltip.classed("visible", 1);
-            
+
             var x = d3.event.x;
                 y = d3.event.y;
 
@@ -211,7 +211,6 @@ var RadarChart = {
             d3.event.stopPropagation();
             container.classed('focus', 1);
             d3.select(this).classed('focused', 1);
-            console.log(dd);
             setTooltip(dd.className);
           })
           .on('mouseout', function(){
@@ -236,8 +235,9 @@ var RadarChart = {
             d3.select(this).classed(classed);
           })
           // styles should only be transitioned with css
-          .style('stroke', function(d, i) { return cfg.color(i); })
-          .style('fill', function(d, i) { return cfg.color(i); })
+          .style('stroke', function(d, i) { console.log(d,i);return cfg.color(d.className); })
+          .style('fill', function(d, i) { return cfg.color(d.className); })
+          .style('fill-opacity', function(d, i) { return 0 })
           .transition().duration(cfg.transitionDuration)
             // svg attrs with js
             .attr('points',function(d) {
@@ -302,7 +302,7 @@ var RadarChart = {
               d3.select(this).classed(classed);
             })
             // styles should only be transitioned with css
-            .style('fill', function(d) { return cfg.color(d[1]); })
+            .style('fill', function(d) { console.log(d[1]); return cfg.color(d[1]); })
             .transition().duration(cfg.transitionDuration)
               // svg attrs with js
               .attr('r', cfg.radius)
